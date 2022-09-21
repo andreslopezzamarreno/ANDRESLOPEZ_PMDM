@@ -1,39 +1,27 @@
-class Coche {
+import java.util.PropertyResourceBundle
 
+class Coche(var marca: String, var modelo: String) {
     //VARIABLES
-    var marca: String
-        get() = field
+    var cv: Int? = null
         set(value) {
             field = value
         }
-    var modelo: String
         get() = field
-        set(value) {
-            field = value
-        }
-    var cv: Int
-        get() = field
-        set(value) {
-            field = value
-        }
     var bastidor: String? = null
     var velocidad: Int? = null
+    lateinit var propietario: Propietario
 
     init {
 
     }
 
     //CONSTRUCTORES
-    constructor(marca: String, modelo: String, cv: Int) {
-        this.marca = marca
-        this.modelo = modelo
+    constructor(marca: String, modelo: String, cv: Int) : this(marca, modelo) {
         this.cv = cv
         this.velocidad = 0
     }
 
-    constructor(marca: String, modelo: String, cv: Int, bastidor: String) {
-        this.marca = marca
-        this.modelo = modelo
+    constructor(marca: String, modelo: String, cv: Int, bastidor: String) : this(marca, modelo) {
         this.cv = cv
         this.bastidor = bastidor
         this.velocidad = 0
@@ -43,6 +31,10 @@ class Coche {
     //crear metodos que permitan al coche aumentar, reducir y parar (velocidad)
     fun aumentarVelocidad(aumento: Int) {
         this.velocidad = this.velocidad?.plus(aumento)
+    }
+
+    fun asignarPropietario() {
+
     }
 
     // si intento frenar mas de la v a la que va el coche --> false v =0
