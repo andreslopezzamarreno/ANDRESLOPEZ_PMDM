@@ -52,6 +52,15 @@ class Coche(var marca: String, var modelo: String) {
         }
     }
 
+
+    fun calcularPar(funcionCalculo : (Int) -> Int, aceleracion: Int){
+        //no puedo poner funcionalidad porque no sé como se hace
+         funcionCalculo(aceleracion)
+
+    }
+
+
+
     //GETTER SETTER
     // tal cual los sabemos
     fun getVelocidad(): Int {
