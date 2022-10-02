@@ -1,16 +1,13 @@
 package model
 
-class Autonomo(nombre: String, apellido: String, dni: String) : Trabajador(
+class Autonomo(nombre: String, apellido: String, dni: String, private var sueldo: Double) : Trabajador(
     nombre, apellido, dni
 ) {
-    private var sueldo:Double = 0.0
-    private var contratado: Boolean = false
+    var contratado: Boolean = false
 
-    constructor(nombre: String,apellido: String,dni: String,sueldo:Double): this(nombre, apellido, dni){
-        this.sueldo = sueldo
-    }
+
     override fun mostrarDatos() {
         super.mostrarDatos()
-        println("Salario Anual: ${sueldo *12}")
+        println("Salario Anual: ${sueldo * 12}")
     }
 }

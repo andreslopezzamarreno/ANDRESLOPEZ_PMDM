@@ -1,4 +1,5 @@
 package model
+
 class Empresa() {
 
     var trabajadores: ArrayList<Trabajador>
@@ -10,14 +11,15 @@ class Empresa() {
     }
 
     fun agregarTrabajador(persona: Trabajador) {
-        var existePersona  = false
+        var existePersona = false
         if (persona is Jefe) hayJefe = true
         trabajadores.forEach {
-            if (it.dni == persona.dni){
+            if (it.dni == persona.dni) {
                 existePersona = true
             }
         }
         if (!existePersona) trabajadores.add(persona)
+
     }
 
 
@@ -48,32 +50,28 @@ class Empresa() {
         }
     }
 
-    fun despedirTrabajador(dniJefe: String, dniTrabajador: String)  {
+    fun despedirTrabajador(dniJefe: String, dniTrabajador: String) {
         var existeJefe = false
         var existePersona = false
-        var trabajador:Trabajador? = null
-
+        var trabajador: Trabajador? = null
         //comprobar que hay jefe
         if (hayJefe) {
-            //para controlar que aunque exista un jefe, concida el dni
             trabajadores.forEach {
+                //para controlar que aunque exista un jefe, concida el dni
                 if (it.dni == dniJefe) {
-                    existeJefe = true
-                }
-            }
-            //para controlar que existe la persona y encontrarla
-            if (existeJefe) {
-                trabajadores.forEach {
-                    if (it.dni == dniTrabajador) {
-                        existePersona= true
-                        trabajador = it
+                    //encontrar trabajador a despedir
+                    trabajadores.forEach {
+                        if (it.dni == dniTrabajador) {
+                            existePersona = true
+                            trabajador = it
+                        }
                     }
                 }
-                //despedir a la persona
-                if (existePersona) {
-                    trabajadores.remove(trabajador)
-                    println("Trabajador Despedido")
-                }
+            }
+            //despedir a la persona
+            if (existePersona) {
+                trabajadores.remove(trabajador)
+                println("Trabajador Despedido")
             }
         } else {
             println("No existe jefe")

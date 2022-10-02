@@ -6,6 +6,7 @@ fun main() {
 
     var tipo: String
     var opcion: Int
+
     do {
         println("Que quieres hacer\n1.Registrar Trabajador\n2.listar trabajadores por tipo\n3.Mostrar datos de trabajador\n4.Despedir trabajador")
         opcion = readln().toInt()
@@ -32,23 +33,22 @@ fun main() {
 
 
                 when (tipo) {
-                    "Asalariado","asalariado","1" -> {
+                    "Asalariado", "asalariado", "1" -> {
                         println("Cual es el Salario?")
                         salario = readln().toDouble()
                         println("Cuantas pagas tiene?")
                         nPagas = readln().toInt()
                         EMPRESA.agregarTrabajador(Asalariado(nombre, apellido, dni, salario, nPagas))
                     }
-                    "Autónomo","autonomo","2" -> {
+                    "Autónomo", "autonomo", "2" -> {
                         println("Cual es el salairo?")
                         salario = readln().toDouble()
                         EMPRESA.agregarTrabajador(Autonomo(nombre, apellido, dni, salario))
                     }
-                    "Jefe","jefe","3" -> {
+                    "Jefe", "jefe", "3" -> {
                         if (EMPRESA.hayJefe) {
                             println("Ya hay un jefe en la empresa")
-                        }
-                        else{
+                        } else {
                             println("Cuantas acciones tiene?")
                             acciones = readln().toInt()
                             println("Cuanto beneficio tiene?")
@@ -57,10 +57,10 @@ fun main() {
                         }
                     }
                 }
-                println( EMPRESA.trabajadores.size)
+                println(EMPRESA.trabajadores.size)
             }
             2 -> {
-                var tipo : String
+                var tipo: String
                 //Listar trabajadores. Para ello preguntará si se quiere listar los asalariados, los autónomos o todos
                 println("Listar datos Trabajadores por tipo")
                 println("listar Trabajadores (Asalariados/Autónomos/Todos):")
@@ -78,10 +78,10 @@ fun main() {
                 //Despedir trabajador: Para ello pide el dni del jefe y del trabajador a despedir y elimina a de la lista
                 println("Despedir Trabajadores")
                 println("dni del jefe")
-                var dniJefe : String = readln()
+                var dniJefe: String = readln()
                 println("dni del trabajador")
                 var dniTrabajador: String = readln()
-                EMPRESA.despedirTrabajador(dniJefe,dniTrabajador)
+                EMPRESA.despedirTrabajador(dniJefe, dniTrabajador)
             }
             5 -> println("SALIR")
         }
