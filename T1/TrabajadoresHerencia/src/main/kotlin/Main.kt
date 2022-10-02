@@ -60,11 +60,11 @@ fun main() {
                 println( EMPRESA.trabajadores.size)
             }
             2 -> {
-                //todo -> no me lista los jefes
+                var tipo : String
                 //Listar trabajadores. Para ello preguntará si se quiere listar los asalariados, los autónomos o todos
                 println("Listar datos Trabajadores por tipo")
-                println("listar Trabajadores (Asalariados/Autónomos/Jefe):")
-                var tipo: String = readln()
+                println("listar Trabajadores (Asalariados/Autónomos/Todos):")
+                tipo = readln()
                 EMPRESA.listarTrabajadores(tipo)
             }
             3 -> {
