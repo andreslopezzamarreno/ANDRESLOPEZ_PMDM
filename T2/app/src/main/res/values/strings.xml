@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">T2_Inicio</string>
+    <string name="otro_elemento">otro elemento</string>
+    <string name="saludo">HOLA</string>
+</resources>
