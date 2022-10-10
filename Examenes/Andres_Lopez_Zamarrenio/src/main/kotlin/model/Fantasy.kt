@@ -1,7 +1,5 @@
 package model
 
-import kotlin.math.max
-
 class Fantasy {
     /*
     Una clase Fantasy, la cual representa el juego. La clase tiene los siguientes
@@ -14,6 +12,7 @@ class Fantasy {
     private var ganador: Participante? = null
 
     init {
+
         participantes = ArrayList()
         jugadores = ArrayList()
 
@@ -44,9 +43,8 @@ class Fantasy {
         jugadores.add(Jugador(25, "Ángel", "Delantero", 300000, 4))
     }
 
-    fun iniciarJuego(administrador: Administrador) {
+    fun iniciarJuego(administrador: Administrador) {}
 
-    }
 
     fun listarJugadores() {
         println("Mostrar jugadores con valor > 3000000")
@@ -62,9 +60,9 @@ class Fantasy {
         }
         println("\n\n\n\nEL GANADOR ES:")
         ganador?.mostrarDatos()
-    }
 
-    fun comprobarParticipante(participante: Participante) {
+        //tambien se puede
+        //this.jugadores.filter { it.getValor() >3000000 }.forEach({it.mostrarDatos()})
     }
 
     fun getJugadores(): ArrayList<Jugador> {

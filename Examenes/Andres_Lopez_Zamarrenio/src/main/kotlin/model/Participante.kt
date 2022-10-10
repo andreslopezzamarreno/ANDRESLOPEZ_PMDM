@@ -22,9 +22,10 @@ class Participante(id: Int, nombre: String) : Persona(id, nombre) {
     }
 
     fun comprobar(jugador: Jugador): Boolean {
+
         if (plantilla?.filter { jugador.getPosicion() == "Portero" }?.size == 0) return true
-        if (plantilla?.filter { jugador.getPosicion() == "Defensa" }?.size == 1) return true
-        if (plantilla?.filter { jugador.getPosicion() == "Mediocentro" }?.size == 1) return true
+        if (plantilla?.filter { jugador.getPosicion() == "Defensa" }?.size!! < 1) return true
+        if (plantilla?.filter { jugador.getPosicion() == "Mediocentro" }?.size!! < 1) return true
         return plantilla?.filter { jugador.getPosicion() == "Delantero" }?.size == 0
     }
 

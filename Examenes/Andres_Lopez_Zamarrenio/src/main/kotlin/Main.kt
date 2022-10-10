@@ -20,6 +20,7 @@ fun main() {
     //participante 1
     participante1.ficharJugador(ligaFantasy.getJugadores().get(0))
     participante1.ficharJugador(ligaFantasy.getJugadores().get(16))
+
     participante1.ficharJugador(ligaFantasy.getJugadores().get(17))
     participante1.ficharJugador(ligaFantasy.getJugadores().get(22))
     participante1.ficharJugador(ligaFantasy.getJugadores().get(13))
