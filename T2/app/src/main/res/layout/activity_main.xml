@@ -24,16 +24,47 @@
         android:textAlignment="center"
         android:id="@+id/textoBienvenida"
         android:textSize="@dimen/textNormal"
-
         />
 
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text = "@string/textoPulsar"
-        android:id="@+id/botonPulsar"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text = "@string/textoPulsar"
+            android:id="@+id/botonPulsar"
+            android:layout_marginRight="@dimen/paddingNormal"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text = "@string/textoPasar"
+            android:id="@+id/botonPasar"
+            />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textoIntroducido"
+        android:layout_marginTop="@dimen/paddingNormal"
+        android:hint="@string/hint_edit"
+        android:inputType="text"
+        android:drawableLeft="@android:drawable/ic_menu_more"
+        android:drawablePadding="@dimen/paddingNormal"
         />
 
 

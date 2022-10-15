@@ -3,4 +3,8 @@
     <string name="otro_elemento">otro elemento</string>
     <string name="saludo">Primera APP de android</string>
     <string name="textoPulsar">PULSAR</string>
+    <string name="textoPasar">PASAR</string>
+    <string name="texto2">puñeta</string>
+    <string name="hint_edit">Introduce tu nombre</string>
+
 </resources>
