@@ -1,5 +1,6 @@
 package com.example.t2_inicio
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,9 +15,9 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     lateinit var botonPulsar: Button
-    lateinit var textoSaludo: TextView
-    lateinit var textItroducido: EditText
     lateinit var botonPasar: Button
+    lateinit var textoSaludo: TextView
+    lateinit var editNombre: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +29,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         botonPulsar = findViewById(R.id.botonPulsar)
         textoSaludo = findViewById(R.id.textoBienvenida)
-        textItroducido = findViewById(R.id.textoIntroducido)
+        editNombre = findViewById(R.id.textoIntroducido)
         botonPasar = findViewById(R.id.botonPasar)
 
         //OnClicklistener OnClick -> view el elemento que ha producido el evento
-        botonPasar.setOnClickListener({this
+        botonPasar.setOnClickListener(this
             /*
             //Toast.makeText(applicationContext,"Toast Completada",Toast.LENGTH_SHORT).show()
             //Snackbar.make(it,"Smack completado",Snackbar.LENGTH_SHORT).show()
@@ -42,8 +43,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             notificacion.show()
 
              */
-        })
-        botonPulsar.setOnClickListener {this
+        )
+        botonPulsar.setOnClickListener(this
             /*
             Log.v("ciclo_vida","boton pulsado")
             /*if (textoSaludo.text.isEmpty()) textoSaludo.text = "primea app finalizada"
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             else textoSaludo.text = textItroducido.text
 
              */
-        }
+        )
         //cuando pulse el boton que ponga un texto en el textview
 
 
@@ -97,15 +98,27 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         when(p0!!.id){
             R.id.botonPulsar ->{
-                if (textoSaludo.text.isEmpty()) textoSaludo.text = "primea app finalizada"
-                else textoSaludo.setText("")
-                if(textItroducido.text.isEmpty()) Log.v("ciclo_vida","EditText vacio")
-                else textoSaludo.text = textItroducido.text
+                if (textoSaludo.text.isEmpty()){
+                    val texto = editNombre.text
+                    textoSaludo.setText(texto)
+                } else{
+                    textoSaludo.setText("")
+                    Toast.makeText(applicationContext, "Faltan datos",Toast.LENGTH_SHORT).show()
+                }
 
             }
+
             R.id.botonPasar ->{
-                var notificacion = Snackbar.make(p0, "Snack completado",Snackbar.LENGTH_INDEFINITE)
-                notificacion.setAction("Seguro que quieres cerrar",{notificacion.dismiss()})
+                var notificacion = Snackbar.make(p0, "Snack",Snackbar.LENGTH_INDEFINITE)
+                notificacion.setAction("Cambiar Pantalla") {
+                    // pasar de activity
+                    // INTENT -> acciones
+                    var intent:Intent = Intent(applicationContext,SecondActivity::class.java)
+                    var datos: Bundle= Bundle()
+                    datos.putString("nombre",editNombre.text.toString())
+                    intent.putExtras(datos)
+                    startActivity(intent)
+                }
 
                 notificacion.show()
             }

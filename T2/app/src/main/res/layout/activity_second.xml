@@ -5,15 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Activity 2"/>
+        android:text="@string/saludoRecuperado"
+        android:textSize="@dimen/textNormal"
+        android:id="@+id/texto_nombre"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/canon"
+        android:id="@+id/imagen_android"
+       />
 </LinearLayout>
