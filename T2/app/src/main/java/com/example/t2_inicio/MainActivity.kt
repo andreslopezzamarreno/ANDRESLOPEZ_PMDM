@@ -3,13 +3,15 @@ package com.example.t2_inicio
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     lateinit var botonPulsar: Button
     lateinit var textoSaludo: TextView
@@ -29,27 +31,31 @@ class MainActivity : AppCompatActivity() {
         textItroducido = findViewById(R.id.textoIntroducido)
         botonPasar = findViewById(R.id.botonPasar)
 
-
-
         //OnClicklistener OnClick -> view el elemento que ha producido el evento
-        botonPasar.setOnClickListener({
+        botonPasar.setOnClickListener({this
+            /*
             //Toast.makeText(applicationContext,"Toast Completada",Toast.LENGTH_SHORT).show()
             //Snackbar.make(it,"Smack completado",Snackbar.LENGTH_SHORT).show()
             var notificacion = Snackbar.make(it, "Snack completado",Snackbar.LENGTH_INDEFINITE)
             notificacion.setAction("Sguro que quieres cerrar",{notificacion.dismiss()})
+
             notificacion.show()
 
+             */
         })
-
-
-        botonPulsar.setOnClickListener {
+        botonPulsar.setOnClickListener {this
+            /*
             Log.v("ciclo_vida","boton pulsado")
             /*if (textoSaludo.text.isEmpty()) textoSaludo.text = "primea app finalizada"
             else textoSaludo.setText("")*/
             if(textItroducido.text.isEmpty()) Log.v("ciclo_vida","EditText vacio")
             else textoSaludo.text = textItroducido.text
+
+             */
         }
         //cuando pulse el boton que ponga un texto en el textview
+
+
 
     }
     override fun onStart() {
@@ -84,5 +90,26 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.v("metodo_onPause","Metodo onDestroy ejecutado")
 
+    }
+
+    override fun onClick(p0: View?) {
+        //Snackbar.make(p0!!,"boton pulsado",Snackbar.LENGTH_INDEFINITE)
+
+        when(p0!!.id){
+            R.id.botonPulsar ->{
+                if (textoSaludo.text.isEmpty()) textoSaludo.text = "primea app finalizada"
+                else textoSaludo.setText("")
+                if(textItroducido.text.isEmpty()) Log.v("ciclo_vida","EditText vacio")
+                else textoSaludo.text = textItroducido.text
+
+            }
+            R.id.botonPasar ->{
+                var notificacion = Snackbar.make(p0, "Snack completado",Snackbar.LENGTH_INDEFINITE)
+                notificacion.setAction("Seguro que quieres cerrar",{notificacion.dismiss()})
+
+                notificacion.show()
+            }
+
+        }
     }
 }
