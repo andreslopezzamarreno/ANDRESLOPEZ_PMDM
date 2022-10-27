@@ -31,11 +31,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/margin">
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/fondo_boton"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/fondo_boton" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -55,7 +57,6 @@
             android:background= "@drawable/fondo_toggle"
             android:textOn=""
             android:textOff=""
-
             />
         <TextView
             android:layout_width="match_parent"
@@ -63,5 +64,37 @@
             android:gravity="right|center_vertical"
             android:text="Resultado Pulsacion"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin"
+
+        >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Resultado Operacion"
+            />
+    </LinearLayout>
+
 
 </LinearLayout>

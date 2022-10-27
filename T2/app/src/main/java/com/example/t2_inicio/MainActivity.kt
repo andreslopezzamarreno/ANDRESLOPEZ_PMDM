@@ -56,8 +56,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         )
         //cuando pulse el boton que ponga un texto en el textview
 
-
-
     }
     override fun onStart() {
         super.onStart()

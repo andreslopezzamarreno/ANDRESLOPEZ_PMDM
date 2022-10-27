@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="paddingGeneral">40dp</dimen>
+    <dimen name="tamanioLetra">80px</dimen>
+    <dimen name="marginTop">25dp</dimen>
+    <dimen name="marginBottom">25dp</dimen>
+    <dimen name="textoNormal">24sp</dimen>
+</resources>

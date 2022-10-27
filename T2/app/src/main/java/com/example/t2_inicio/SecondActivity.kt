@@ -2,7 +2,6 @@ package com.example.t2_inicio
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -36,5 +35,6 @@ class SecondActivity : AppCompatActivity() {
 
     private fun instacias() {
         textoNombre = findViewById(R.id.texto_nombre)
-        imagenAndroid = findViewById(R.id.imagen_android)    }
+        imagenAndroid = findViewById(R.id.imagen_android)
+    }
 }

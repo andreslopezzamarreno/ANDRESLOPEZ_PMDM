@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JuegoActivity"
+    android:background="@drawable/cf"
+    android:orientation="vertical"
+    android:id="@+id/linearGeneral"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntos"
+        android:id="@+id/puntos"
+        android:textColor="@color/black"
+        />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingBottom="40dp"
+        android:paddingTop="40dp">
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="0.6"
+            android:src="@drawable/fondo_mayor"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/mayor"/>
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="0.6"
+            android:background="@android:color/transparent"
+            android:src="@drawable/fondo_menor"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal|bottom"
+            android:id="@+id/menor"
+            />
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

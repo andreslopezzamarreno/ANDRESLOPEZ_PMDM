@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity"
-    android:gravity="center"
+    tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@drawable/fondo_cartas">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/saludoRecuperado"
-        android:textSize="@dimen/textNormal"
-        android:id="@+id/texto_nombre"/>
+        android:layout_gravity="center"
+        android:text="Empezar"
+        android:id="@+id/empezar"/>
 
-    <ImageView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/canon"
-        android:id="@+id/imagen_android"
-       />
-
-
+        android:layout_gravity="center"
+        android:hint="Introduce tu nombre"
+        android:textColorHint="@color/white"
+        android:id="@+id/textoNombre"/>
 </LinearLayout>
