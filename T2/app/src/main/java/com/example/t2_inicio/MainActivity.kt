@@ -103,7 +103,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
                     textoSaludo.setText("")
                     Toast.makeText(applicationContext, "Faltan datos",Toast.LENGTH_SHORT).show()
                 }
-
             }
 
             R.id.botonPasar ->{

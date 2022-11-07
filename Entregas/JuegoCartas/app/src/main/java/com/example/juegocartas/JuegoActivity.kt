@@ -8,7 +8,9 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.delay
 
 class JuegoActivity : AppCompatActivity(), OnClickListener{
 
@@ -26,15 +28,11 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_juego)
-
-
         instancias()
         recuperarDatos()
         acciones()
-        carta = (Math.random()*13).toInt()
-        linearGeneral.setBackgroundResource(cartas[carta])
-
-
+        //carta = (Math.random()*13).toInt()
+        linearGeneral.setBackgroundResource(R.drawable.cf)
     }
 
     private fun acciones() {
@@ -42,11 +40,11 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
         menor.setOnClickListener(this)
         var notificacion = Snackbar.make(mayor, "Bienvenido ${nombreRecuperado}" ,Snackbar.LENGTH_INDEFINITE)
         notificacion.setAction("Empezar") {
-            mayor.isEnabled = true
-            menor.isEnabled = true
+            carta = (Math.random()*13).toInt()
+            visibleButton()
+            linearGeneral.setBackgroundResource(cartas[carta])
         }
         notificacion.show()
-
     }
 
     private fun instancias() {
@@ -54,9 +52,7 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
         menor = findViewById(R.id.menor)
         linearGeneral = findViewById(R.id.linearGeneral)
         puntos = findViewById(R.id.puntos)
-
-        mayor.isEnabled = false
-        menor.isEnabled = false
+        invisibleButton()
     }
 
     override fun onClick(p0: View?) {
@@ -83,19 +79,18 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
 
     fun juego(){
         linearGeneral.setBackgroundResource(cartas[carta2])
-        punto += 1
+        punto ++
         puntos.text = "Puntos " + punto
         carta = carta2
     }
 
     fun finJuego(){
-        mayor.isEnabled = false
-        menor.isEnabled = false
-        //setClicable -> no existe
-        //setUnable -> tampoco existe
+        //mayor.isEnabled = false
+        //menor.isEnabled = false
+        invisibleButton()
+        linearGeneral.setBackgroundResource(cartas[carta2])
         var notificacion = Snackbar.make(mayor, "Puntos obtenidos: ${punto}" ,Snackbar.LENGTH_INDEFINITE)
         notificacion.setAction("Volver a inicio") {
-
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
         notificacion.show()
@@ -104,5 +99,14 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
     private fun recuperarDatos() {
         var bundleRecuperado: Bundle? = intent.extras
         nombreRecuperado = bundleRecuperado?.getString("nombre","por defecto").toString()
+    }
+
+    private fun invisibleButton(){
+        mayor.isVisible = false
+        menor.isVisible = false
+    }
+    private fun visibleButton(){
+        mayor.isVisible = true
+        menor.isVisible = true
     }
 }
