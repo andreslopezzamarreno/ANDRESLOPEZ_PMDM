@@ -1,5 +1,6 @@
 package com.example.spinner
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -57,8 +58,12 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
         binding.spinnerComplejo.onItemSelectedListener = this
         binding.botonAgregar.setOnClickListener {
             //adaptadorPersonalizado.agregarPais()
-            var pais:Pais = binding.spinnerComplejo.selectedItem as Pais
-            binding.imagenPais.setImageResource(pais.imagen)
+
+        }
+        binding.botonDetalle.setOnClickListener {
+            var intent: Intent = Intent(applicationContext,DetailActivity::class.java)
+            //bundle
+            startActivity(intent)
         }
     }
 
@@ -67,8 +72,8 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
             R.id.spinner_simple->{
             }
             R.id.spinner_complejo->{
-                /*var pais:Pais = adaptadorPersonalizado.getItem(p2) as Pais
-                binding.imagenPais.setImageResource(pais.imagen)*/
+                var pais:Pais = binding.spinnerComplejo.selectedItem as Pais
+                binding.imagenPais.setImageResource(pais.imagen)
             }
         }
     }
