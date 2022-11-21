@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.delay
 
 class JuegoActivity : AppCompatActivity(), OnClickListener{
 
@@ -59,6 +58,8 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
         carta2 = (Math.random()*13).toInt()
         println(carta)
         println(carta2)
+        println("nuevas cartas")
+        linearGeneral.setBackgroundResource(cartas[carta2])
         when(p0!!.id){
             R.id.mayor ->{
                 if(carta<carta2){
@@ -78,17 +79,17 @@ class JuegoActivity : AppCompatActivity(), OnClickListener{
     }
 
     fun juego(){
-        linearGeneral.setBackgroundResource(cartas[carta2])
         punto ++
         puntos.text = "Puntos " + punto
         carta = carta2
+        println(carta)
+        println(carta2)
     }
 
     fun finJuego(){
         //mayor.isEnabled = false
         //menor.isEnabled = false
         invisibleButton()
-        linearGeneral.setBackgroundResource(cartas[carta2])
         var notificacion = Snackbar.make(mayor, "Puntos obtenidos: ${punto}" ,Snackbar.LENGTH_INDEFINITE)
         notificacion.setAction("Volver a inicio") {
             startActivity(Intent(applicationContext, MainActivity::class.java))

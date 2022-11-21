@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="Nº titulos"
         app:layout_constraintEnd_toEndOf="@+id/imagen_detalle"
         app:layout_constraintStart_toStartOf="@+id/imagen_detalle"
         app:layout_constraintTop_toTopOf="@+id/guia_horizontal" />
@@ -47,7 +47,6 @@
         android:id="@+id/texto_titulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etiqueta_titulos"
         app:layout_constraintTop_toTopOf="@+id/etiqueta_titulos" />
@@ -57,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Jugador Estrella"
         app:layout_constraintStart_toStartOf="@+id/etiqueta_titulos"
         app:layout_constraintTop_toBottomOf="@+id/etiqueta_titulos" />
 
@@ -65,7 +64,6 @@
         android:id="@+id/texto_estrella"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/texto_titulos"
         app:layout_constraintStart_toStartOf="@+id/texto_titulos"
         app:layout_constraintTop_toTopOf="@+id/etiqueta_estrella" />
