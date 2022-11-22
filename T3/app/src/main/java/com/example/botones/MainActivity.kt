@@ -9,7 +9,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), OnClickListener,
-    android.widget.CompoundButton.OnCheckedChangeListener {
+    android.widget.CompoundButton.OnCheckedChangeListener, OnCheckedChangeListener{
 
     private lateinit var grupoRadios: RadioGroup;
     private lateinit var radioUno: RadioButton;
@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), OnClickListener,
             var radioSeleccionado: RadioButton = findViewById(grupoRadios.checkedRadioButtonId)
             Snackbar.make(radioSeleccionado, radioSeleccionado.text, Snackbar.LENGTH_SHORT).show()
         }*/
+        grupoRadios.setOnCheckedChangeListener(this)
         //toggleEstado.setOnCheckedChangeListener(this)
         //checkEstado.setOnCheckedChangeListener(this)
     }
@@ -87,8 +88,14 @@ class MainActivity : AppCompatActivity(), OnClickListener,
             R.id.check_estado -> {
                 Snackbar.make(p0, p1.toString(), Snackbar.LENGTH_SHORT).show()
             }
-            R.id.grupo_radios -> {
-                //todo: porque no puedo poner aqui el grupoRadios.setOnCheckedChangeListener (linea 33)
+        }
+    }
+
+    override fun onCheckedChanged(p0: RadioGroup?, p1: Int) {
+        when (p0!!.id){
+            R.id.grupo_radios->{
+                var radioSeleccionado: RadioButton = findViewById(grupoRadios.checkedRadioButtonId)
+                Snackbar.make(radioSeleccionado, radioSeleccionado.text, Snackbar.LENGTH_SHORT).show()
             }
         }
     }

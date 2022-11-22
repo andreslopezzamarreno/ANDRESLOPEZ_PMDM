@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ThirdActivity">
+
+    <ImageView
+        android:id="@+id/imagen_lenguaje"
+        android:layout_width="149dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textSize="40dp"
+        android:id="@+id/nombre_lenguaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen_lenguaje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagen_lenguaje"
+        app:layout_constraintTop_toTopOf="@+id/imagen_lenguaje" />
+
+    <TextView
+        android:id="@+id/aasignatura_pasado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_lenguaje" />
+
+    <TextView
+        android:id="@+id/nota_uno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/aasignatura_pasado"
+        app:layout_constraintStart_toStartOf="@+id/aasignatura_pasado"
+        app:layout_constraintTop_toBottomOf="@+id/aasignatura_pasado" />
+
+    <TextView
+        android:id="@+id/nota_dos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/nota_uno"
+        app:layout_constraintStart_toStartOf="@+id/nota_uno"
+        app:layout_constraintTop_toBottomOf="@+id/nota_uno" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.develop.t3_listas.adapters
 
 import android.content.Context
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,7 @@ import android.widget.TextView
 import com.develop.t3_spinner.modelo.Pais
 import com.example.listas.R
 
-class AdapterPais(
-    private var lista: ArrayList<Pais>, private var context: Context
-) : BaseAdapter() {
-
+class AdapterPais(private var lista: ArrayList<Pais>, private var context: Context) : BaseAdapter() {
 
     override fun getCount(): Int {
         return lista.size;
@@ -29,8 +25,7 @@ class AdapterPais(
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        var view: View = LayoutInflater
-            .from(context).inflate(R.layout.item_listas,p2,false) ;
+        var view: View = LayoutInflater.from(context).inflate(R.layout.item_listas,p2,false) ;
 
         // recupero el objeto con el que tengo que trabajar
         var pais: Pais = lista.get(p0);
