@@ -41,7 +41,6 @@ class listasActivity : AppCompatActivity(), OnItemSelectedListener {
 
     private fun asociarDatos() {
         binding.spinner.adapter = adaptadorSencillo
-
     }
 
     private fun instancias() {
