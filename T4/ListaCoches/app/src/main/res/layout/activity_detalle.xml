@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalleActivity"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/imagen_coche"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:src="@drawable/supra"/>
+
+    <TextView
+        android:id="@+id/marca_coche"
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:text="klk"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="40dp"/>
+    <TextView
+        android:id="@+id/modelo_coche"
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:text="klk"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="40dp"/>
+    <TextView
+        android:id="@+id/cv_coche"
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:text="klk"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="40dp"/>
+    <TextView
+        android:id="@+id/precio_coche"
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:text="klk"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="40dp"/>
+</LinearLayout>
