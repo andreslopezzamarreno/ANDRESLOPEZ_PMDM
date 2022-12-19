@@ -11,6 +11,7 @@
         <item>Lexus</item>
     </string-array>
     <string-array name="lista_precios">
+        <item>Todos</item>
         <item>Hasta 100.000</item>
         <item>Hasta 200.000</item>
         <item>Hasta 300.000</item>

@@ -50,6 +50,11 @@ class AdapterCoche(var listaCoche:ArrayList<Coche>, var contexto:Context):
         return listaCoche.size
     }
 
+    fun cambioLista(listaNueva: ArrayList<Coche>){
+        this.listaCoche = listaNueva
+        notifyDataSetChanged()
+    }
+
     interface OnRecyclerCocheListener{
         fun OnCocheSelected(coche: Coche)
     }
