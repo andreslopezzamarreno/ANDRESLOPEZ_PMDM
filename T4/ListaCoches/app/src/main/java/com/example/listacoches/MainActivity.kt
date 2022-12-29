@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listacoches.adapter.AdapterCoche
 import com.example.listacoches.databinding.ActivityMainBinding
 import com.example.listacoches.model.Coche
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), AdapterCoche.OnRecyclerCocheListener,
     OnItemSelectedListener {
@@ -52,9 +53,10 @@ class MainActivity : AppCompatActivity(), AdapterCoche.OnRecyclerCocheListener,
                     listaFiltrada = listaCoches.filter { it.marca == marca } as ArrayList<Coche>
                     adaptadorCoche.cambioLista(listaFiltrada)
                 }
-
             }
+
             binding.spinnerMarca.id -> {
+                //todo: Terminar metodo, no me filtra por precio
                 val precio = binding.spinnerPrecio.adapter.getItem(p2)
                 when (p2){
                     0->{
@@ -104,6 +106,10 @@ class MainActivity : AppCompatActivity(), AdapterCoche.OnRecyclerCocheListener,
         listaCoches.add(Coche("Porsche", "Taycan", 200, 91024, R.drawable.taycan))
 
         adaptadorCoche = AdapterCoche(listaCoches, this)
+
+        adaptadorCoche.funcionComunicar = {
+            Snackbar.make(binding.root,it.precio.toString(),Snackbar.LENGTH_SHORT).show()
+        }
 
         binding.spinnerMarca.adapter = ArrayAdapter.createFromResource(
             applicationContext,

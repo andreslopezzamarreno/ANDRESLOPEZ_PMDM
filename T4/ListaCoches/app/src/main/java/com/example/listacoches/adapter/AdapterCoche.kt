@@ -42,7 +42,11 @@ class AdapterCoche(var listaCoche:ArrayList<Coche>, var contexto:Context):
             datos.putSerializable("coche",cocheActual)
             intent.putExtras(datos)
             startActivity(contexto,intent,datos)*/
-            listener.OnCocheSelected(cocheActual)
+
+            //listener.OnCocheSelected(cocheActual)
+
+            funcionComunicar?.invoke(cocheActual)
+
         }
     }
 
@@ -58,6 +62,8 @@ class AdapterCoche(var listaCoche:ArrayList<Coche>, var contexto:Context):
     interface OnRecyclerCocheListener{
         fun OnCocheSelected(coche: Coche)
     }
+
+    var funcionComunicar: ((coche: Coche)->Unit)? = null
 
     inner class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textoModelo : TextView

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dialogos</string>
+    <string name="titulo_dialogo">Titulo del cuadro de confirmación</string>
+</resources>
