@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/ic_menu_more"
+        android:layout_gravity="center"
+       />
+
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/edit_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="introduce nombre"
+        android:layout_weight="0.2"/>
+
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="introduce nombre"
+        android:inputType="textPassword"
+        android:layout_weight="0.2"/>
+
+
+    <CheckBox
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recordar Contraseña"
+        android:gravity="end"
+        android:id="@+id/check_recordar"/>
+
+    <Button
+        android:text="Login"
+        android:id="@+id/boton_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
+
+</LinearLayout>

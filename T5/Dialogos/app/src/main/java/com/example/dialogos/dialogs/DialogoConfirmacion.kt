@@ -10,17 +10,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.example.dialogos.R
 
-class DialogoConfirmacion: DialogFragment() {
-
-
-    private lateinit var interfaz: Interfaz
+class DialogoConfirmacion : DialogFragment() {
 
     //crear interfaz
     //crear objeto de interfaz
     //inicializo el objeto --> listener = contexto
-        //llamo al metodo desde la pulsacion o accion que quiera
+    //llamo al metodo desde la pulsacion o accion que quiera
     //inplementarla en el destino
     //utilizo los metodos implementados
+
+    private lateinit var interfaz: Interfaz
+    var funcionNula: ((Boolean) -> Unit)? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -41,13 +41,15 @@ class DialogoConfirmacion: DialogFragment() {
         builder.setMessage("¿Estas seguro que quieres continuar?")
 
         //botones
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener {
-                dialogInterface, i -> Toast.makeText(requireContext(),"Pulsado Positivo",Toast.LENGTH_SHORT).show()
-                interfaz.ponerTexto("Positivo")
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+            //Toast.makeText(requireContext(), "Pulsado Positivo", Toast.LENGTH_SHORT).show()
+            interfaz.ponerTexto("Positivo")
+            funcionNula?.invoke(true)
         })
-        builder.setNegativeButton("CANCELAR", DialogInterface.OnClickListener {
-                dialogInterface, i -> Toast.makeText(requireContext(),"Pulsado Negativo",Toast.LENGTH_SHORT).show()
-                interfaz.ponerTexto("Negativo")
+        builder.setNegativeButton("CANCELAR", DialogInterface.OnClickListener { dialogInterface, i ->
+            //Toast.makeText(requireContext(), "Pulsado Negativo", Toast.LENGTH_SHORT).show()
+            interfaz.ponerTexto("Negativo")
+            funcionNula?.invoke(false)
         })
 
         return builder.create()
@@ -58,7 +60,7 @@ class DialogoConfirmacion: DialogFragment() {
         super.onDetach()
     }
 
-    interface Interfaz{
+    interface Interfaz {
         fun ponerTexto(mensaje: String)
     }
 
