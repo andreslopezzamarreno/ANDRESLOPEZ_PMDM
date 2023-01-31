@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_filtrar"
+        android:title="filtrar"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/item_añadir"
+        android:title="Añadir"/>
+    <item
+        android:id="@+id/item_vaciar"
+        android:title="Vaciar"/>
+</menu>

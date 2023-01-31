@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PracticaExamen</string>
+    <string-array name="horas">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="curso">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="ciclos">
+        <item>Curso</item>
+        <item>Ciclo</item>
+        <item>Horas</item>
+        <item>Profesor</item>
+    </string-array>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Opcion 1"
+        android:id="@+id/menu_op1"
+        />
+    <item
+        android:title="Agregar"
+        android:id="@+id/item_agregar"
+        />
+    <item
+        android:title="Vaciar"
+        android:id="@+id/item_vaciar"
+        />
+    <item
+        android:title="Compartir"
+        android:id="@+id/menu_op2"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="zoom "
+        android:id="@+id/menu_op3"
+        android:icon="@android:drawable/ic_menu_zoom"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Mas"
+        android:id="@+id/menu_op4"
+        android:icon="@android:drawable/ic_menu_more"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:title="Elementos add"
+        android:id="@+id/menu_op5"
+        >
+        <menu>
+            <item
+                android:title="Sub menu 1.1"
+                android:id="@+id/menu_op1_1"/>
+            <item
+                android:title="Sub menu 1.2"
+                android:id="@+id/menu_op1_2"/>
+        </menu>
+
+    </item>
+</menu>

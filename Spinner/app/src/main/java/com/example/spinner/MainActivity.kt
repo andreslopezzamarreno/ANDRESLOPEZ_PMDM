@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
         arraySpinner.add(Pais("Alemania",R.drawable.alemania))
         arraySpinner.add(Pais("Francia",R.drawable.francia))
         arraySpinner.add(Pais("Qatar",R.drawable.qatar))
-
     }
 
 
