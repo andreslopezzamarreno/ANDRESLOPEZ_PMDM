@@ -6,17 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.fragments.Usuario
 import com.example.fragments.databinding.FragemntDosBinding
 import com.example.fragments.databinding.FragmentUnoBinding
 
 class FragmentDos:Fragment() {
     private lateinit var binding: FragemntDosBinding
-    private lateinit var nombre:String
+    private lateinit var usuario: Usuario
 
     companion object {
-        fun newInstance(nombre:String): FragmentDos{
+        fun newInstance(usuario: Usuario): FragmentDos{
             val args = Bundle()
-            args.putString("nombre",nombre)
+            args.putSerializable("usuario",usuario)
             val fragment = FragmentDos()
             fragment.arguments = args
             return fragment
@@ -25,7 +26,7 @@ class FragmentDos:Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        nombre = this.arguments?.getString("nombre") ?: "No hay nombre"
+        usuario = this.arguments?.getSerializable("usuario") as Usuario
     }
 
     override fun onCreateView(
@@ -39,6 +40,6 @@ class FragmentDos:Fragment() {
 
     override fun onStart() {
         super.onStart()
-        binding.textNombref2.text = "Nombre pasado: ${nombre}"
+        binding.textNombref2.text = "Nombre pasado: ${usuario.nombre}"
     }
 }

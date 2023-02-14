@@ -7,6 +7,7 @@ import android.view.View.OnClickListener
 import android.widget.Toast
 import com.example.fragments.databinding.ActivityMainBinding
 import com.example.fragments.fragments.FragmentDos
+import com.example.fragments.fragments.FragmentTres
 import com.example.fragments.fragments.FragmentUno
 import com.google.android.material.snackbar.Snackbar
 
@@ -42,11 +43,12 @@ class MainActivity : AppCompatActivity(),OnClickListener,FragmentUno.OnNombreF1L
             }
         }
     }
-    override fun onNombreSelected(nombre: String) {
+
+    override fun onDatosSelected(usuario: Usuario) {
         //Toast.makeText(this,nombre,Toast.LENGTH_SHORT).show()
         val fm = supportFragmentManager
         val ft = fm.beginTransaction()
-        ft.replace(binding.sitoFragment.id,FragmentDos.newInstance(nombre))
+        ft.replace(binding.sitoFragment.id,FragmentTres.newInstance(usuario))
         ft.commit()
         //Snackbar.make(binding.root,nombre,Snackbar.LENGTH_SHORT).show()
     }
