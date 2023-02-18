@@ -16,7 +16,7 @@ class DialogoComunicar:DialogFragment() {
         // 1. Creo un metodo newInstance como parametro paso lo que va a revibir el dialogo
                 //Devuleve el objeto del tipo que quiere comunicar
 
-        fun newInstance(nombre: String):DialogoComunicar {
+        fun newInstance(nombre: String,mensaje:String):DialogoComunicar {
 
             val dialogo = DialogoComunicar()
 
@@ -24,7 +24,7 @@ class DialogoComunicar:DialogFragment() {
             //y se lo pongo al cuadro de dialogo
             val bundle = Bundle()
             bundle.putString("nombre",nombre)
-            bundle.putString("mensaje","Esto es un ejemplo de mensaje pasado")
+            bundle.putString("mensaje",mensaje)
             dialogo.arguments = bundle
 
             return dialogo

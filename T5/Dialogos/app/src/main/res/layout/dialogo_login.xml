@@ -10,7 +10,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="fitXY"
-        android:src="@android:drawable/ic_menu_more"
+        android:src="@android:drawable/ic_menu_camera"
         android:layout_gravity="center"
        />
 
@@ -19,7 +19,7 @@
         android:id="@+id/edit_nombre"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="introduce nombre"
+        android:hint="Introduce nombre"
         android:layout_weight="0.2"/>
 
     <EditText
@@ -27,7 +27,7 @@
         android:id="@+id/edit_pass"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="introduce nombre"
+        android:hint="Introduce contraseña"
         android:inputType="textPassword"
         android:layout_weight="0.2"/>
 

@@ -40,14 +40,16 @@ class DialogoPersonalizado:DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-
+        acciones()
     }
 
     fun acciones(){
         botonLogin.setOnClickListener{
             println("boton del dialogo pulsado")
+            dismiss()
         }
     }
+
     fun instancias(){
         botonLogin = vista.findViewById(R.id.boton_login)
         editNomrbe = vista.findViewById(R.id.edit_nombre)
@@ -58,5 +60,9 @@ class DialogoPersonalizado:DialogFragment() {
     override fun onStart() {
         super.onStart()
         instancias()
+    }
+
+    interface OnDialogoPersonalizadoListener{
+        fun onDialogoPersonalizadoSelected(nombre: String)
     }
 }
