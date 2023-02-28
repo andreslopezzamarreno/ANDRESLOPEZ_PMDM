@@ -23,6 +23,7 @@ class DialogoLista:DialogFragment() {
 
         builder.setTitle("Elige opcion")
 
+
         builder.setItems(elementos, DialogInterface.OnClickListener{dialogInterface, i ->
             //i --> posicion pulsada
             interfaz.ponerTextoLista(elementos.get(i))

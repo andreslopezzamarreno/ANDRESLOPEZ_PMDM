@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:layout_weight="0.4"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce Nombre" />
+
+        <EditText
+            android:id="@+id/edit_apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce apellido" />
+
+        <EditText
+            android:id="@+id/edit_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce correo" />
+
+        <EditText
+            android:id="@+id/edit_edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce edad"
+            android:inputType="number" />
+
+        <Spinner
+            android:id="@+id/spinner_puesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/boton_guardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="guardar" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_usuarios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:layout_weight="0.6" />
+
+
+</LinearLayout>

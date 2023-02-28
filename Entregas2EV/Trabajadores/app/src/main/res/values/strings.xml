@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Trebajadores</string>
+
+    <string-array name="puestos">
+        <item>Administrativo</item>
+        <item>Comercial</item>
+        <item>Soporte</item>
+        <item>Informática</item>
+    </string-array>
+</resources>
