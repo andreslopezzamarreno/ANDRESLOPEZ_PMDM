@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/FRegister" />
+        <action
+            android:id="@+id/action_FLogin_to_SecondActivity"
+            app:destination="@id/secondActivity" />
     </fragment>
     <fragment
         android:id="@+id/FRegister"
@@ -25,4 +28,17 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FLogin" />
     </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.example.proyectologin.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second">
+
+        <argument
+            android:name="uid"
+            app:argType="string" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+    </activity>
 </navigation>

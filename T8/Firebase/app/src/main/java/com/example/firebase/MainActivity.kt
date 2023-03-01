@@ -25,31 +25,32 @@ class MainActivity : AppCompatActivity() {
         binding.botonCrear.setOnClickListener {
             auth.createUserWithEmailAndPassword("andres.lopez@cesjuanpablosegundo.es", "ces123")
                 .addOnCompleteListener {
+
                     if (it.isSuccessful) {
                         println("Usuario creado con exito")
                     } else {
                         println("Error en la creacion del usuario")
                     }
                 }
-        }
 
-        binding.loginUsuario.setOnClickListener {
-            auth.signInWithEmailAndPassword("andres.lopez@cesjuanpablosegundo.es", "ces123")
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        println("Usuario logeado con  " + auth.currentUser?.uid)
+            binding.loginUsuario.setOnClickListener {
+                auth.signInWithEmailAndPassword("andres.lopez@cesjuanpablosegundo.es", "ces123")
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            println("Usuario logeado con  " + auth.currentUser?.uid)
 
-                    } else {
-                        println("Error en el login del usuario")
+                        } else {
+                            println("Error en el login del usuario")
+                        }
                     }
-                }
-        }
+            }
 
-        binding.botonNodo.setOnClickListener {
-            //crear la referencia
-            database.getReference("ejemplo").setValue("valor nuevo del nodo ejemplo")
-            database.getReference("nodo_nuevo").child("ejemplo_hijo").child("nodo_agregar")
-                .setValue("valor del nodo")
+            binding.botonNodo.setOnClickListener {
+                //crear la referencia
+                database.getReference("ejemplo").setValue("valor nuevo del nodo ejemplo")
+                database.getReference("nodo_nuevo").child("ejemplo_hijo").child("nodo_agregar")
+                    .setValue("valor del nodo")
+            }
         }
     }
 }
