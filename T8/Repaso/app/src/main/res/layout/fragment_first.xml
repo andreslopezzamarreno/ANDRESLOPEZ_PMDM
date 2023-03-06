@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:text="Fragement registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/nombre_firstf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Introduce nombre" />
+
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/contrasenia_firstf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce contraseña"
+        android:inputType="textPassword"/>
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/edad_firstf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce edad"/>
+
+    <Button
+        android:layout_margin="20dp"
+        android:id="@+id/button_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar" />
+
+</LinearLayout>
